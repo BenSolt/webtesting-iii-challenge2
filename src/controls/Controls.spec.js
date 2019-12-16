@@ -5,7 +5,9 @@ import {render, fireEvent} from '@testing-library/react';
 import Controls from './Controls';
 
 test('control render', () => {
-    expect(render(<Controls/>)).toMatchSnapShot();
+    expect (render(<Controls/>)).toMatchSnapShot();
+    
+    
 });
 
 test ('unlock gate', () => {

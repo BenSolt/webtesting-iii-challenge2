@@ -7,7 +7,7 @@ import Display from './Display';
 
 test('display render', () => {
     expect(render(<Display/>)).toMatchSnapshot();
-})
+});
 
 test('use red-led if locked', () => {
     const {queryByText} = render(<Display locked={true}/>)
@@ -16,7 +16,7 @@ test('use red-led if locked', () => {
 });
 test('use green-led if locked', () => {
     const {queryByText} = render(<Display locked={false}/>)
-    const locked = queryByText(/locked/i);
-    epect(locked).toHaveClass('green-led');
+    const unlocked = queryByText(/locked/i);
+    epect(unlocked).toHaveClass('green-led');
 });
 
