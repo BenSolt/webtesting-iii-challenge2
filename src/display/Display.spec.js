@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {render} from '@testing-library/react';
-
+import '@testing-library/jest-dom/extend-expect'
 import Display from './Display';
 
 test('display render', () => {
@@ -17,6 +17,6 @@ test('use red-led if locked', () => {
 test('use green-led if locked', () => {
     const {queryByText} = render(<Display locked={false}/>)
     const unlocked = queryByText(/locked/i);
-    epect(unlocked).toHaveClass('green-led');
+    expect(unlocked).toHaveClass('green-led');
 });
 
