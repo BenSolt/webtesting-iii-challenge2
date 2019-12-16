@@ -12,7 +12,7 @@ test('display render', () => {
 test('use red-led if locked', () => {
     const {queryByText} = render(<Display locked={true}/>)
     const locked = queryByText(/locked/i);
-    epect(locked).toHaveClass('red-led');
+    expect(locked).toHaveClass('red-led');
 });
 test('use green-led if locked', () => {
     const {queryByText} = render(<Display locked={false}/>)
