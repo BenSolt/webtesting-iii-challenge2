@@ -23,5 +23,10 @@ const {getByText} = render(<Controls toggleLocked={toggleunLockMock} locked={fal
 
 const lockBtn = getByText(/Lock Gat/i)
 fireEvent.click(lockBtn);
-expect(toggleLockMock).not.toHaveBeenCalled();
+expect(toggleunLockMock).not.toHaveBeenCalled();
+})
+
+test('open Gate', () => {
+    const toggleOpenM = jest.fn()
+    const {getByText} = render(<Controls toggleClosed={toggleOpenM} closed={true}/>)
 })
