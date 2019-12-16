@@ -15,8 +15,8 @@ test('use red-led if locked', () => {
     epect(locked).toHaveClass('red-led');
 });
 test('use green-led if locked', () => {
-    const {queryByText} = render(<Display locked={true}/>)
+    const {queryByText} = render(<Display locked={false}/>)
     const locked = queryByText(/locked/i);
-    epect(locked).toHaveClass('red-led');
+    epect(locked).toHaveClass('green-led');
 });
 
