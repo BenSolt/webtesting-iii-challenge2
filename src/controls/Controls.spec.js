@@ -21,12 +21,16 @@ test ('lock gate', () => {
     const toggleunLockMock = jest.fn();
 const {getByText} = render(<Controls toggleLocked={toggleunLockMock} locked={false}/>)
 
-const lockBtn = getByText(/Lock Gat/i)
+const lockBtn = getByText(/Lock Gate/i)
 fireEvent.click(lockBtn);
 expect(toggleunLockMock).not.toHaveBeenCalled();
 })
 
 test('open Gate', () => {
-    const toggleOpenM = jest.fn()
-    const {getByText} = render(<Controls toggleClosed={toggleOpenM} closed={true}/>)
+    const toggleOpenMock = jest.fn()
+    const {getByText} = render(<Controls toggleClosed={toggleOpenMock} closed={true}/>)
+
+    const closeBtn = getByText(/open/i)
+fireEvent.click(closeBtn);
+expect(toggleOpenMock).not.toHaveBeenCalled();
 })
